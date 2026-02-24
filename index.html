@@ -175,7 +175,8 @@
     inset: 0;
     background:
       linear-gradient(175deg, rgba(51,51,51,0.3) 0%, rgba(139,37,0,0.25) 50%, rgba(51,51,51,0.85) 100%),
-      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+      url('images/hero.jpg') center/cover no-repeat;
     z-index: 1;
   }
 
@@ -545,6 +546,13 @@
   }
 
   .space-item:hover .space-item-overlay { transform: translateY(0); }
+
+  .space-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   .space-item-placeholder {
     width: 100%;
@@ -979,23 +987,23 @@
     </div>
     <div class="space-grid fade-in">
       <div class="space-item">
-        <div class="space-item-placeholder">Main Hall Photo</div>
+        <img src="images/hall-main.jpg" alt="Interior of Gilford Community Hall main room with seating" loading="lazy">
         <div class="space-item-overlay">Main Hall — 80 seated, 120 standing</div>
       </div>
       <div class="space-item">
-        <div class="space-item-placeholder">Kitchen</div>
+        <img src="images/kitchen.jpg" alt="Gilford Community Hall kitchen with updated appliances" loading="lazy">
         <div class="space-item-overlay">Full Kitchen</div>
       </div>
       <div class="space-item">
-        <div class="space-item-placeholder">Stage</div>
+        <img src="images/stage.jpg" alt="Stage area inside Gilford Community Hall" loading="lazy">
         <div class="space-item-overlay">Stage &amp; Sound</div>
       </div>
       <div class="space-item">
-        <div class="space-item-placeholder">Exterior</div>
+        <img src="images/exterior.jpg" alt="Exterior view of Gilford Community Hall building" loading="lazy">
         <div class="space-item-overlay">Hall Exterior</div>
       </div>
       <div class="space-item">
-        <div class="space-item-placeholder">Yard</div>
+        <img src="images/yard.jpg" alt="Outdoor yard and park area at Gilford Community Hall" loading="lazy">
         <div class="space-item-overlay">Outdoor Yard &amp; Park</div>
       </div>
     </div>
@@ -1064,8 +1072,9 @@
   <div class="container fade-in">
     <h2 class="section-title">Stay Connected</h2>
     <p>Event announcements, hall news, and ways to get involved. No spam. Just neighbours.</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault();">
-      <input type="email" placeholder="Your email address" required>
+    <form class="newsletter-form" name="newsletter" data-netlify="true">
+      <input type="hidden" name="form-name" value="newsletter">
+      <input type="email" name="email" placeholder="Your email address" required>
       <button type="submit">Subscribe</button>
     </form>
   </div>

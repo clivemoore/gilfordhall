@@ -36,6 +36,24 @@ CSS custom properties defined on `:root`:
 
 Fonts (Google Fonts): **Bitter** (headings, serif), **Source Sans 3** (body, sans-serif).
 
+## Images
+
+The `images/` directory holds all site images. The HTML references these files:
+- `images/hero.jpg` — hero background (via CSS `background-image` on `.hero-bg`)
+- `images/hall-main.jpg` — main hall photo (space grid)
+- `images/kitchen.jpg` — kitchen (space grid)
+- `images/stage.jpg` — stage (space grid)
+- `images/exterior.jpg` — hall exterior (space grid)
+- `images/yard.jpg` — outdoor yard/park (space grid)
+
+Images are not yet committed — drop the actual files into `images/` when ready.
+
+## Deployment (Netlify)
+
+- Config lives in `netlify.toml` (publish dir `.`, www→apex redirect, security headers, image caching).
+- The newsletter form uses **Netlify Forms** (`data-netlify="true"`, hidden `form-name` field). No JS handler needed — Netlify processes submissions automatically.
+- Custom domain: `gilfordhall.ca` (configure DNS in Netlify dashboard).
+
 ## Key Conventions
 
 - No frameworks or libraries — keep it vanilla HTML/CSS/JS.
